@@ -1,23 +1,55 @@
-import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        System.out.print("Enter your goal in minutes: ");
-        int goal = scan.nextInt();
-
-        ActivityTracker log = new ActivityTracker(goal);
-        while (!log.goalAchieved()) {
-            System.out.print("Enter the number of minutes for your activity session: ");
-            int time = scan.nextInt();
-            log.logMinutes(time);
-            System.out.println("---- Current Stats ----");
-            System.out.println("Number of sessions: " + log.getSessions());
-            System.out.println("Total number of minutes: " + log.getTotalMinutes());
-            System.out.println("Longest session logged (max minutes): " + log.getMaxMinutes());
-            System.out.println("You reached your goal: " + log.goalAchieved());
-            System.out.println("-----------------------");
-        }
-        System.out.println("Thank you for using the activity tracker!");
+        Dragon dragon = new Dragon();
+        System.out.println(dragon.state());
+        System.out.println(); // blank line
+        int attackAmt = dragon.attack();
+        System.out.println(); // blank line
+        dragon.takeDamage(20);
+        System.out.println(); // blank line
+        dragon.powerUp(1);
+        System.out.println(); // blank line
+        dragon.powerUp(2);
+        System.out.println(); // blank line
+        dragon.powerUp(2);
+        System.out.println(); // blank line
+        dragon.powerUp(2);
+        System.out.println(); // blank line
+        int attackAmt2 = dragon.attack();
+        System.out.println(); // blank line
+        System.out.println(dragon.state());
+        System.out.println(); // blank line
+        System.out.println(dragon.state());
+        System.out.println(); // blank line
+        dragon.takeDamage(70);
+        System.out.println(); // blank line
+        dragon.powerUp(2);
+        System.out.println(); // blank line
+        int attackAmt3 = dragon.attack();
+        System.out.println(); // blank line
+        dragon.powerUp(2);
+        System.out.println(); // blank line
+        System.out.println(dragon.state());
+        System.out.println(); // blank line
+        int attackAmt4 = dragon.attack();
+        System.out.println(); // blank line
+        System.out.println(dragon.state());
+        System.out.println(); // blank line
+        dragon.takeDamage(65);
+        System.out.println(); // blank line
+        dragon.takeDamage(40);
+        System.out.println(); // blank line
+        dragon.takeDamage(10);
+        System.out.println(); // blank line
+        System.out.println(dragon.state());
+        System.out.println(); // blank line
+        System.out.println(dragon.getStrength());
+        System.out.println(); // blank line
+        System.out.println(dragon.getHealth());
+        System.out.println(); // blank line
+        System.out.println(dragon.getLevel());
+        System.out.println(); // blank line
+        System.out.println(dragon.isDead());
+        System.out.println(); // blank line
     }
 }
